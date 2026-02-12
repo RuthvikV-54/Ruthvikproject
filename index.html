@@ -85,13 +85,17 @@ section {
   margin: 120px auto 60px;
   padding: 60px 6%;
   border-radius: 20px;
-  background: #000000;
-  box-shadow: 0 20px 60px rgba(255,255,255,0.06);
+
+  /* GLASS FIX */
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(16px);
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
   opacity: 0;
   transform: translateY(50px);
   transition: 0.8s ease;
 
-  scroll-margin-top: 100px; /* FIX */
+  scroll-margin-top: 100px;
 }
 
 section.show{
@@ -432,6 +436,7 @@ sections.forEach(sec=>observer.observe(sec));
 
 </body>
 </html>
+
 
 
 
