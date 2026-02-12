@@ -1,103 +1,276 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
+<style>
+/* ================= ROOT ================= */
+:root{
+  --black:#000000;
+  --glass-bg:rgba(255,255,255,0.08);
+  --glass-border:rgba(255,255,255,0.18);
+  --text-main:#ffffff;
+  --text-muted:#bfbfbf;
+}
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Nunito',sans-serif;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body{
+  background:var(--black);
+  color:var(--text-main);
+  scroll-behavior:smooth;
+}
 
-  <!-- HEADER -->
-  <header class="glass">
-    <nav>
-      <h1>ROHITH</h1>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#interests">Interests</a></li>
-        <li><a href="#get-in-touch">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+/* ================= HEADER (GLASS) ================= */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
 
-  <!-- HOME -->
-  <section id="home" class="glass section">
-    <h2>Hello, I'm Rohith</h2>
-    <p>Content Writer | Tech Enthusiast | Creative Thinker</p>
-  </section>
+  background:var(--glass-bg);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--glass-border);
+}
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="glass card">
-      <h2>About Me</h2>
-      <p>
-        I am a passionate content writer with a strong academic background
-        and hands-on experience in technology-focused content creation.
-      </p>
-    </div>
-  </section>
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 30px;
+  display:flex;
+  justify-content:flex-end;
+}
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="glass card">
-      <h2>Skills</h2>
-      <ul class="list">
-        <li>Content Writing</li>
-        <li>Technical Writing</li>
-        <li>Web Basics</li>
-        <li>Research</li>
-      </ul>
-    </div>
-  </section>
+.nav-links a{
+  margin-left:30px;
+  text-decoration:none;
+  color:var(--text-muted);
+  font-weight:600;
+  position:relative;
+  transition:.3s;
+}
 
-  <!-- INTERESTS -->
-  <section id="interests" class="section">
-    <div class="glass card">
-      <h2>Interests</h2>
-      <ul class="list">
-        <li>Technology</li>
-        <li>Gaming</li>
-        <li>Storytelling</li>
-        <li>Design</li>
-      </ul>
-    </div>
-  </section>
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  background:#ffffff;
+  bottom:-6px;
+  left:0;
+  transition:.3s;
+}
 
-  <!-- GET IN TOUCH -->
-  <section id="get-in-touch" class="section">
-    <div class="glass get-in-touch-card">
-      <h2>Get in Touch</h2>
+.nav-links a:hover{
+  color:#ffffff;
+}
 
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <span>rohith@example.com</span>
-        </div>
+.nav-links a:hover::after{
+  width:100%;
+}
 
-        <div class="contact-item">
-          <i class="fas fa-phone"></i>
-          <span>+91 9XXXXXXXXX</span>
-        </div>
+/* ================= SECTIONS (GLASS) ================= */
+section{
+  max-width:1200px;
+  margin:120px auto 70px;
+  padding:70px 6%;
+  border-radius:28px;
 
-        <div class="contact-item">
-          <i class="fab fa-linkedin"></i>
-          <a href="#">linkedin.com/in/rohith</a>
-        </div>
+  background:var(--glass-bg);
+  backdrop-filter:blur(18px);
+  border:1px solid var(--glass-border);
+  box-shadow:0 30px 80px rgba(0,0,0,0.8);
 
-        <div class="contact-item">
-          <i class="fab fa-github"></i>
-          <a href="#">github.com/rohith</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  opacity:0;
+  transform:translateY(60px);
+  transition:.9s ease;
+}
 
-</body>
-</html>
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= HOME ================= */
+#home{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:60px;
+}
+
+.home-text{
+  flex:1 1 450px;
+}
+
+.home-text h1{
+  font-size:52px;
+  font-weight:800;
+}
+
+.home-text p{
+  margin-top:20px;
+  font-size:18px;
+  line-height:1.9;
+  color:var(--text-muted);
+}
+
+.home-image{
+  flex:1 1 350px;
+  text-align:center;
+}
+
+.home-image img{
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  border:3px solid #ffffff;
+  box-shadow:0 0 40px rgba(255,255,255,.25);
+  object-fit:cover;
+}
+
+/* ================= ABOUT & SKILLS ================= */
+#about{
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+}
+
+.about-box{
+  flex:1 1 500px;
+  background:var(--glass-bg);
+  padding:40px;
+  border-radius:24px;
+  border:1px solid var(--glass-border);
+}
+
+.about-box h2{
+  font-size:32px;
+  margin-bottom:18px;
+}
+
+.about-box p{
+  line-height:1.85;
+  color:var(--text-muted);
+}
+
+.skills-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:18px;
+}
+
+.skills-list div{
+  padding:12px 22px;
+  border-radius:50px;
+  background:#ffffff;
+  color:#000000;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:.3s;
+}
+
+.skills-list div:hover{
+  transform:translateY(-4px);
+  background:#e5e5e5;
+}
+
+/* ================= INTERESTS ================= */
+#interest h2{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:60px;
+}
+
+.interest-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+}
+
+.interest-card{
+  background:var(--glass-bg);
+  padding:35px 25px;
+  border-radius:26px;
+  border:1px solid var(--glass-border);
+  text-align:center;
+  transition:.4s;
+}
+
+.interest-card img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  margin-bottom:20px;
+}
+
+.interest-card p{
+  color:var(--text-muted);
+}
+
+.interest-card:hover{
+  transform:translateY(-12px);
+}
+
+/* ================= CONTACT ================= */
+#contact{
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+}
+
+.contact-form,
+.contact-info{
+  flex:1 1 450px;
+  background:var(--glass-bg);
+  padding:40px;
+  border-radius:26px;
+  border:1px solid var(--glass-border);
+}
+
+input,textarea{
+  width:100%;
+  padding:14px;
+  margin:12px 0;
+  border-radius:14px;
+  background:#ffffff;
+  border:none;
+  color:#000000;
+}
+
+button{
+  margin-top:15px;
+  padding:14px 45px;
+  border-radius:30px;
+  background:#ffffff;
+  color:#000000;
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  background:#e5e5e5;
+  transform:scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  color:#777;
+  padding:40px 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  #home,#about,#contact{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
