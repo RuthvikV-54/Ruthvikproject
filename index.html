@@ -1,273 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Ruthvik.V Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
-}
-
-body {
-  background: #ffffff;
-  color: white;
-  scroll-behavior: smooth;
-}
-
-/* DARK BACKDROP FOR GLASS */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(180deg, #000, #0a0a0a, #000);
-  z-index: -1;
-}
-
-/* HEADER */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 90px;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(14px);
-  z-index: 1000;
-}
-
-.navbar {
-  max-width: 1200px;
-  height: 100%;
-  margin: auto;
-  padding: 0 30px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.nav-links a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-}
-
-/* SECTIONS – FULL PAGE PANELS */
-section {
-  min-height: calc(100vh - 90px); /* FULL PAGE FIX */
-  max-width: 1200px;
-  margin: 90px auto 0; /* EXACT HEADER OFFSET */
-  padding: 80px 6%;
-  border-radius: 25px;
-
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  scroll-margin-top: 90px;
-}
-
-/* HOME */
-#home {
-  display: flex;
-  gap: 50px;
-}
-
-.home-text {
-  flex: 1;
-}
-
-.home-text h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.home-text p {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.home-image img {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  border: 5px solid white;
-  object-fit: cover;
-}
-
-/* ABOUT */
-#about {
-  gap: 40px;
-}
-
-.about-box {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  padding: 40px;
-  border-radius: 25px;
-  flex: 1;
-}
-
-.about-box h2 {
-  margin-bottom: 15px;
-}
-
-/* INTERESTS */
-#interest {
-  flex-direction: column;
-}
-
-.interest-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 35px;
-  width: 100%;
-}
-
-.interest-card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  padding: 30px;
-  border-radius: 25px;
-  text-align: center;
-}
-
-.interest-card img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-/* CONTACT */
-#contact {
-  gap: 40px;
-}
-
-.contact-form,
-.contact-info {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  padding: 45px;
-  border-radius: 25px;
-  flex: 1;
-}
-
-.contact-info p {
-  margin-top: 25px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-/* FORM */
-input, textarea {
-  width: 100%;
-  padding: 14px;
-  margin: 12px 0;
-  border-radius: 12px;
-  border: none;
-}
-
-button {
-  margin-top: 15px;
-  padding: 14px 40px;
-  border-radius: 25px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  section {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <nav class="navbar">
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#interest">Interests</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header class="glass">
+    <nav>
+      <h1>ROHITH</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#get-in-touch">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="home">
-  <div class="home-text">
-    <h1>Hi, I’m Ruthvik.V</h1>
-    <p>A creative web designer and developer who loves clean, modern interfaces.</p>
-  </div>
-  <div class="home-image">
-    <img src="HomePage.avif">
-  </div>
-</section>
+  <!-- HOME -->
+  <section id="home" class="glass section">
+    <h2>Hello, I'm Rohith</h2>
+    <p>Content Writer | Tech Enthusiast | Creative Thinker</p>
+  </section>
 
-<section id="about">
-  <div class="about-box">
-    <h2>About Me</h2>
-    <p>I’m a curious learner passionate about technology, creativity, and self-growth.</p>
-  </div>
-  <div class="about-box">
-    <h2>Skills</h2>
-    <p>HTML5, Gaming, Problem Solving</p>
-  </div>
-</section>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="glass card">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate content writer with a strong academic background
+        and hands-on experience in technology-focused content creation.
+      </p>
+    </div>
+  </section>
 
-<section id="interest">
-  <h2 style="margin-bottom:40px;">My Interests</h2>
-  <div class="interest-cards">
-    <div class="interest-card">
-      <img src="GameDev.jpg">
-      <h3>Game Development</h3>
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="glass card">
+      <h2>Skills</h2>
+      <ul class="list">
+        <li>Content Writing</li>
+        <li>Technical Writing</li>
+        <li>Web Basics</li>
+        <li>Research</li>
+      </ul>
     </div>
-    <div class="interest-card">
-      <img src="OnlineGaming.jpg">
-      <h3>Online Gaming</h3>
-    </div>
-    <div class="interest-card">
-      <img src="Photography.jpg">
-      <h3>Photography</h3>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <div class="contact-form">
-    <h2>Contact Me</h2>
-    <input placeholder="Name">
-    <input placeholder="Email">
-    <textarea rows="5" placeholder="Message"></textarea>
-    <button>Send</button>
-  </div>
-  <div class="contact-info">
-    <h3>Get in touch</h3>
-    <p><i class="fas fa-envelope"></i> email.com</p>
-    <p><i class="fab fa-instagram"></i> @instagram_user</p>
-    <p><i class="fas fa-phone"></i> +91 ***** *****</p>
-  </div>
-</section>
+  <!-- INTERESTS -->
+  <section id="interests" class="section">
+    <div class="glass card">
+      <h2>Interests</h2>
+      <ul class="list">
+        <li>Technology</li>
+        <li>Gaming</li>
+        <li>Storytelling</li>
+        <li>Design</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GET IN TOUCH -->
+  <section id="get-in-touch" class="section">
+    <div class="glass get-in-touch-card">
+      <h2>Get in Touch</h2>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>rohith@example.com</span>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+91 9XXXXXXXXX</span>
+        </div>
+
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="#">linkedin.com/in/rohith</a>
+        </div>
+
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <a href="#">github.com/rohith</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
