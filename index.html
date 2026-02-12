@@ -104,12 +104,20 @@ section.show{
 }
 
 /* ================= HOME ================= */
-#home{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:60px;
+#home {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(16px);
+
+  border-radius: 25px;
+  color: #ffffff;
+  padding: 80px 6%;
 }
+
 
 .home-text{
   flex:1 1 450px;
@@ -436,6 +444,7 @@ sections.forEach(sec=>observer.observe(sec));
 
 </body>
 </html>
+
 
 
 
