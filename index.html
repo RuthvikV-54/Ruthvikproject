@@ -233,13 +233,45 @@ section.show{
 }
 
 .contact-form,
-.contact-info{
-  flex:1 1 450px;
-  background:var(--glass-bg);
-  padding:40px;
-  border-radius:26px;
-  border:1px solid var(--glass-border);
+/* GET IN TOUCH – FIXED SPACING (RUTHVIK.V) */
+.contact-info {
+  flex: 1 1 350px;
+  background: rgba(0, 0, 0, 0.6); /* glass */
+  backdrop-filter: blur(14px);
+  padding: 50px 45px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.contact-info p {
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  line-height: 1.8;
+}
+
+.contact-info p i {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 10px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 input,textarea{
   width:100%;
@@ -365,12 +397,25 @@ footer{
   </div>
 
   <div class="contact-info">
-    <h3>Get in touch</h3>
-    <p><i class="fas fa-envelope"></i> 25bcac54@kristujayanti.com</p>
-    <p><i class="fab fa-instagram"></i> @thoughtless_lad</p>
-    <p><i class="fas fa-phone"></i> +91 70197 30270</p>
-  </div>
+  <h3>Get in touch</h3>
+
+  <p>
+    <i class="fas fa-envelope"></i>
+    25bcac54@kristujayanti.com
+  </p>
+
+  <p>
+    <i class="fab fa-instagram"></i>
+    @thoughtless_lad
+  </p>
+
+  <p>
+    <i class="fas fa-phone"></i>
+    +91 70197 30270
+  </p>
+</div>
 </section>
+
 
 <footer>
 © 2026 Portfolio | Designed by Ruthvik.V
@@ -390,6 +435,7 @@ sections.forEach(sec=>observer.observe(sec));
 
 </body>
 </html>
+
 
 
 
